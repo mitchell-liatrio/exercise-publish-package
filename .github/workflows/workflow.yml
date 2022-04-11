@@ -13,9 +13,10 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-      - run: cd ./sample-packages/npm
       - run: npm ci
+        working-directory: ./sample-packages/npm
       - run: npm test
+        working-directory: ./sample-packages/npm
 
   publish-gpr:
     needs: build
